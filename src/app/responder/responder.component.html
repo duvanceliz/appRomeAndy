@@ -1,0 +1,37 @@
+
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="me-2">Le vas a responder a:</span><strong>{{item.nombre}}</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-warning" role="alert" *ngIf="exito!=''">
+            {{exito}}
+           </div>
+           <div class="alert alert-danger" role="alert" *ngIf="error!=''">
+            {{error}}
+           </div>
+          <form>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" [(ngModel)]="nombre" name="nombre" (keyup)="keyupCall()">
+              <label for="floatingInput">Nombre</label>
+            </div>
+        
+              <div class="form-floating">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" [(ngModel)]="comentario" name="comentario" [disabled]=disabled></textarea>
+                <label for="floatingTextarea2">Danos tu opinión</label>
+              </div>
+          
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-dark" (click)="publicar(item)">Publicar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ 

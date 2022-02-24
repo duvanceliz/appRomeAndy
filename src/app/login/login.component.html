@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-4 p-4 border mt-2 bg-light">
+
+          <h3 class="text-dark text-center">Iniciar Sesión</h3>
+          
+          <div class="alert alert-danger" role="alert" *ngIf="error">
+            Error al iniciar sesión
+          </div>
+            <form>
+                <div class="mb-3">
+                    <label for="inputNombre" class="form-label text-dark" >Usuario</label>
+                    <input type="text" class="form-control" id="username" [(ngModel)]="username" name="username" placeholder="Usuario" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label text-dark">Contraseña</label>
+                    <input type="password" [(ngModel)]="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña" required>
+                  </div>
+                  <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label text-dark" for="exampleCheck1">Recordar</label>
+                  </div>
+                <button type="button" class="btn btn-dark" (click)="entrar()">Entrar</button>
+                <div class="spinner-border text-dark" role="status" *ngIf="loading">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </form>
+
+              <div class="col-md-4">
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+

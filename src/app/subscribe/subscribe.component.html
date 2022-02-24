@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-4 p-4 border border-dark mt-2 mb-2 bg-light">
+
+          <h3 class="text-dark">Suscríbete para más información</h3>
+          <div class="alert alert-warning" role="alert" *ngIf="exito != ''">
+           {{exito}}
+          </div>
+          <div class="alert alert-danger" role="alert" *ngIf="error != ''">
+            {{error}}
+           </div>
+
+            <form>
+                <div class="mb-3">
+                    <label for="inputNombre" class="form-label text-dark" >Nombre</label>
+                    <input type="text" class="form-control" id="inputNombre" [(ngModel)]="nombre" name="nombre">
+                  </div>
+                  <div class="mb-3">
+                    <label for="inputApellido" class="form-label  text-dark"  >Apellido</label>
+                    <input type="text" class="form-control" id="inputApellido" [(ngModel)]="apellido" name="apellido" >
+                  </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label  text-dark"  >Correo Electrónico</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="email" name="email" >
+                </div>
+                <button type="button" class="btn btn-dark" (click)="saveUser()">Suscribirme</button>
+              </form>
+
+              <div class="col-md-4">
+
+            </div>
+
+        </div>
+    </div>
+</div>
